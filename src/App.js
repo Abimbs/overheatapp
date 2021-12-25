@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-      <div className="app bg-purple40 w-full h-full px-10 ">
+      <div className="app bg-purple40 w-full h-full px-4 ">
           <Router>
               <Routes>
                   <Route element={<SignIn />} path="/" exact />
