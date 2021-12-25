@@ -4,12 +4,12 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import PrimaryButton from "./PrimaryButton";
 import PrimaryInput from "./PrimaryInput";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 
 
 
 const StepTwo = ({ nextStep }) => {
-    const navigate = useNavigate()
+ 
     return (
         <div className=" xl:max-w-6xl mx-auto">
             <Formik
