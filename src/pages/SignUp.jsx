@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import StepOne from "../componets/StepOne";
 import Stepper from "../componets/Stepper";
 import StepTwo from "../componets/StepTwo";
+import Dashboard from "./Dashboard";
 
 const SignUp = () => {
     const [step, setStep] = useState(0);
@@ -19,6 +20,7 @@ const SignUp = () => {
                 return <StepOne nextStep={nextStep} step={step} />;
             case 1:
                 return <StepTwo backStep={backStep} step={step} />;
+         
 
               default: return 'Unknow step'
         }

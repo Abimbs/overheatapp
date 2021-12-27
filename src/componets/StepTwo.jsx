@@ -4,11 +4,12 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import PrimaryButton from "./PrimaryButton";
 import PrimaryInput from "./PrimaryInput";
-import { Link, } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 const StepTwo = ({ nextStep }) => {
+    const navigate = useNavigate()
  
     return (
         <div className=" xl:max-w-6xl mx-auto">
@@ -19,7 +20,7 @@ const StepTwo = ({ nextStep }) => {
                     email: "",
                     country: "",
                     postcode: "",
-                    Age: "",
+                    age: "",
                     gender: "",
                     dob: "",
                     password: "",
@@ -44,8 +45,9 @@ const StepTwo = ({ nextStep }) => {
                             "Passwords don't match."
                         ),
                 })}
-                onSubmit={() => {
-                    console.log("true");
+                onSubmit={(values) => {
+                    console.log(values);
+                    navigate('/dashboard')
                 }}
             >
                 {(formik) => (
@@ -117,13 +119,13 @@ const StepTwo = ({ nextStep }) => {
                                 ...formik.getFieldProps("dob"),
                             }}
                         />
-                        <Link to="/dashbaord">
+                        {/* <Link to="/dashbaord"> */}
                             <PrimaryButton
                                 text="Next"
                                 type="submit"
                                 onSubmit={nextStep}
                             />
-                        </Link>
+                        {/* </Link> */}
                     </form>
                 )}
             </Formik>

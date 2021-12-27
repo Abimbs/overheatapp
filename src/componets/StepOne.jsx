@@ -1,26 +1,22 @@
-import React, { useState, useMemo } from "react";
+import React, { useState,  } from "react";
 
 import { Formik } from "formik";
 import * as Yup from "yup";
 import PrimaryButton from "./PrimaryButton";
 import PrimaryInput from "./PrimaryInput";
-import { Link,  } from "react-router-dom";
-import Select from "react-select";
-import countryList from "react-select-country-list";
+import { Link, useNavigate } from "react-router-dom";
+
+
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
 const StepOne = ({ nextStep, step }) => {
     const [value, setValue] = useState("");
-    const options = useMemo(() => countryList().getData(), []);
-
-    const changeHandler = (value) => {
-        setValue(value);
-    };
+    const navigate = useNavigate()
+    
 
     return (
         <div className=" xl:max-w-6xl mx-auto ">
-           
             <Formik
                 initialValues={{
                     firstName: "",
@@ -57,7 +53,8 @@ const StepOne = ({ nextStep, step }) => {
                     { email, password, confirmPassword, firstName, lastName },
                     { setSubmitting }
                 ) => {
-                  
+                    navigate('/dashboard')
+                    console.log(email)
                 }}
             >
                 {(formik) => (
@@ -93,15 +90,27 @@ const StepOne = ({ nextStep, step }) => {
                                 international
                             />
                         </div>
+                       
+                        <div className="mb-5" />
 
-                        <div className="border-2 shadow appearance-none  mt-5 rounded-lg w-full py-3  px-3 text-gray-700 leading-tight bg-white">
+                        {/* <div className="border-2 shadow appearance-none  mt-5 rounded-lg w-full py-3  px-3 text-gray-700 leading-tight bg-white">
                             <Select
                                 options={options}
                                 value={value}
                                 onChange={changeHandler}
                             />
-                        </div>
-                        <div className="mb-5" />
+                         */}
+                        <PrimaryInput
+                            id="country"
+                            type="country"
+                            label="country"
+                            placeholder="Country"
+                            formikTouched={formik.touched.country}
+                            formikErrors={formik.errors.country}
+                            getFieldProps={{
+                                ...formik.getFieldProps("country"),
+                            }}
+                        />
 
                         <PrimaryInput
                             id="postcode"
@@ -171,7 +180,11 @@ const StepOne = ({ nextStep, step }) => {
                             }}
                             eye
                         />
-                        <PrimaryButton text="Next" type="submit" onSubmit={nextStep} />
+                        <PrimaryButton
+                            text="Next"
+                            type="submit"
+                            onSubmit={nextStep}
+                        />
                     </form>
                 )}
             </Formik>
@@ -183,7 +196,6 @@ const StepOne = ({ nextStep, step }) => {
                     </span>
                 </p>
             </div>
-            
         </div>
     );
 };
