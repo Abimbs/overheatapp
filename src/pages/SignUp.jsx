@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StepOne from "../componets/StepOne";
 import Stepper from "../componets/Stepper";
 import StepTwo from "../componets/StepTwo";
-import Dashboard from "./Dashboard";
+
 
 const SignUp = () => {
     const [step, setStep] = useState(0);
