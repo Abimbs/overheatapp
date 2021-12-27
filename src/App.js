@@ -7,14 +7,16 @@ import HeartRate from "./pages/HeartRate";
 import WeightLog from "./pages/WeightLog";
 import Calories from "./pages/Calories";
 import WaterLog from "./pages/WaterLog";
+import Suppport from "./pages/Suppport";
+import SupportDetails from "./pages/SupportDetails";
+import SubscribedMeetings from "./pages/SupportDetails";
 
 
 function App() {
     return (
-       
-            <div className="app bg-purple40 w-full h-full px-4 ">
+        <div className="app bg-purple40 w-full h-full px-4 ">
             <Router>
-                 <OverProvider>
+                <OverProvider>
                     <Routes>
                         <Route element={<SignIn />} path="/" exact />
                         <Route element={<SignUp />} path="/signup" exact />
@@ -23,14 +25,23 @@ function App() {
                             path="/dashboard"
                             exact
                         />
-                        <Route element={<HeartRate/>} path="/heartrate" exact />
-                        <Route element={<WeightLog/>} path="/weightlog" exact />
-                        <Route element={<Calories/>} path="/calories" exact />
-                        <Route element={<WaterLog/>} path="/waterlog" exact />
+                        <Route element={<HeartRate />} path="/heartrate" />
+                        <Route element={<WeightLog />} path="/weightlog" />
+                        <Route element={<Calories />} path="/calories" />
+                        <Route element={<WaterLog />} path="/waterlog" />
+                        <Route element={<Suppport />} path="/support" />
+                        <Route
+                            element={<SupportDetails />}
+                            path="/supportdetails"
+                        />
+                        <Route
+                            element={<SubscribedMeetings />}
+                            path="/subscribedMeetings"
+                        />
                     </Routes>
-                    </OverProvider>
-                </Router>
-            </div>
+                </OverProvider>
+            </Router>
+        </div>
     );
 }
 

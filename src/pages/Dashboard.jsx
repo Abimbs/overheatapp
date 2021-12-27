@@ -41,10 +41,12 @@ const array3 = [
     {
         id: 1,
         image: support,
+        route:"/support"
     },
     {
         id: 2,
         image: activity,
+        route:"/activity"
     },
 ];
 
@@ -155,13 +157,16 @@ const Dashboard = () => {
                     ))}
                 </div>
                 <div className="flex">
-                    {array3.map(({ id, image }) => (
+                    {array3.map(({ id, image, route }) => (
                         <div key={id}>
-                            <img
-                                className="xl:w-96 "
-                                src={image}
-                                alt="dashboard"
-                            />
+                            
+                            <Link to={route}>
+                                <img
+                                    className="xl:w-96 "
+                                    src={image}
+                                    alt="dashboard"
+                                />
+                            </Link>
                         </div>
                     ))}
                 </div>
