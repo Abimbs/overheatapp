@@ -12,7 +12,7 @@ const Support = () => {
             title: "Birmingham Overeaters",
             location: "Birmingham, United Kingdom",
             timeZone: "0:00GMT",
-            date: "1 December 2021",
+            date: "2 December 2021",
             time:"19:20",
             language: "English",
             Topic: "Emotional Overheating",
@@ -33,7 +33,7 @@ const Support = () => {
             title: "London Guys",
             location: "Liverpool, United Kingdom",
             timeZone: "0.00GMT",
-            date: "1 December 2021",
+            date: "5 December 2021",
             time:"22:30",
             language: "English",
             Topic:"Meditation",image:meditation
@@ -43,7 +43,7 @@ const Support = () => {
             title: "Ice Cream Lovers",
             location: "Liverpool, United Kingdom",
             timeZone: "0.00GMT",
-            date: "1 December 2021",
+            date: "11 December 2021",
             time:"22:30",
             language: "English",
             Topic:"Meditation",image:overheat
@@ -53,7 +53,7 @@ const Support = () => {
             title: "Quit Smoking",
             location: "Liverpool, United Kingdom",
             timeZone: "0:00GMT",
-            date: "1 December 2021",
+            date: "16 December 2021",
             time:"22:30",
             language: "English",
             Topic:"Meditation",image:meditation
@@ -63,7 +63,7 @@ const Support = () => {
             title: "Manchester Overeaters",
             location: "Liverpool, United Kingdom",
             timeZone: "0:00GMT",
-            date: "1 December 2021",
+            date: "20 December 2021",
             time:"22:30",
             language: "English",
             Topic:"Meditation",image:overheat
@@ -73,7 +73,7 @@ const Support = () => {
             title: "UK Emotional Overeaters",
             location: "Liverpool, United Kingdom",
             timeZone: "0:00GMT",
-            date: "1 December 2021",
+            date: "6 December 2021",
             time:"22:30",
             language: "English",
             Topic:"Meditation",image:meditation
@@ -83,7 +83,7 @@ const Support = () => {
             title: "Meditation by Angela",
             location: "Liverpool, United Kingdom",
             timeZone: "0:00GMT",
-            date: "1 December 2021",
+            date: "14 December 2021",
             time:"22:30",
             language: "English",
             Topic:"Meditation",image:overheat
@@ -210,7 +210,7 @@ const Support = () => {
                             >
                                 <p className="text-sm">{item.title}</p>
                                 <p className="text-sm">
-                                    {item.date} / {item.time}
+                                    {item.date} 
                                 </p>
                             </div>
                         </Link>
