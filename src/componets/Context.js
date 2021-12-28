@@ -19,6 +19,11 @@ export const useAuth = () => {
         { id:6, item:"Organize my Drawers", completed:true},
         { id:7, item:"Study for mock exams", completed:true},
     ]);
+    const [todo, setTodo] = useState("");
+      const valuehandler = (e) => {
+          e.preventDefault();
+          setTodo(e.target.value);
+      };
      
      
 
@@ -32,12 +37,35 @@ export const useAuth = () => {
          });
          setDashboard(newTodo);
      };
+
+     const addTodo = (e) => {
+         e.preventDefault()
+         if (todo === "") {
+              alert("Todo cannot be empty")   
+         } else {
+               const newTodo = {
+                   id: Math.random(),
+                   item: todo,
+                   completed: false,
+               };
+               setDashboard([newTodo, ...dashboard]);
+               setTodo("");
+         }
+       
+
+
+         
+     }
      
 
     const value = {
         dashboard,
         setDashboard,
         todoComplete,
+        addTodo,
+        todo,
+        setTodo,
+        valuehandler,
     };
     return (
         <OverHeat.Provider value={value}>

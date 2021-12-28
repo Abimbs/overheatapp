@@ -10,6 +10,7 @@ import WaterLog from "./pages/WaterLog";
 import Suppport from "./pages/Suppport";
 import SupportDetails from "./pages/SupportDetails";
 import SubscribedMeetings from "./pages/SupportDetails";
+import Activity from "./pages/Activity";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                         <Route element={<Calories />} path="/calories" />
                         <Route element={<WaterLog />} path="/waterlog" />
                         <Route element={<Suppport />} path="/support" />
+                        <Route element={<Activity />} path="/activity" />
                         <Route
                             element={<SupportDetails />}
                             path="/supportdetails"
