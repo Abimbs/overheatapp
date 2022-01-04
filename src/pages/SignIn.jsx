@@ -8,7 +8,7 @@ import {Link, useNavigate } from "react-router-dom"
 const SignIn = () => {
     const navigate = useNavigate()
     return (
-        <div className="h-screen xl:max-w-6xl mx-auto">
+        <div className="h-screen  mx-auto xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40">
             <div className="text-textpurple text-center font-bold pt-32">
                 <p className="text-4xl">Welcome to</p>
                 <p className="text-5xl">Me</p>
@@ -75,7 +75,7 @@ const SignIn = () => {
                 </Link>{" "}
             </div>
 
-            <div className=" mt-44 text-center ">
+            <div className=" mt-28 text-center ">
                 <p>
                     Don't have an account?{" "}
                     <span className="font-bold text-textpurple">

@@ -1,6 +1,6 @@
 import React from "react";
 
-const PrimaryButton = ({ text, type,  onSubmit }) => {
+const PrimaryButton = ({ text, type,  onSubmit,  }) => {
     return (
         <button
             onClick={onSubmit}

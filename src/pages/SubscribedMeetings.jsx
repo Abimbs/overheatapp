@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import profile from "../images/Ellipse 1.png";
+import speak from "../images/speak.png";
 import PrimaryButton from "../componets/PrimaryButton";
 
 const SubscribedMeetings = () => {
@@ -28,8 +29,9 @@ const SubscribedMeetings = () => {
                 </Link>
                 <img src={profile} alt="profile" className="ml-auto" />
             </div>
-            <div className=" text-textpurple">
-                <p className="text-4xl font-bold my-6">Meeting Details</p>
+            <div className="flex gap-4 text-textpurple mb-3 ">
+                <p className="text-2xl font-semibold">Meeting Details</p>
+                <img src={speak} alt="wave" className="w-10  h-10 " />
             </div>
             {Object.values(item).map((item, index) => (
                 <div key={item.id}>
@@ -70,7 +72,6 @@ const SubscribedMeetings = () => {
                     dolore, facere id repellat autem atque veniam sint officiis.
                 </p>
             </div>{" "}
-            
             <div className="mt-20">
                 <PrimaryButton text="Join Via Zoom" />
             </div>

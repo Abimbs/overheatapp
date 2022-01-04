@@ -3,6 +3,7 @@ import profile from "../images/Ellipse 1.png";
 import { Link } from "react-router-dom";
 import overheat from "../images/overheat.png";
 import meditation from "../images/meditation.png";
+import shake from "../images/shake.png";
 import sort from "../images/sort.png";
 
 const Support = () => {
@@ -136,7 +137,7 @@ const Support = () => {
         },
     ];
     return (
-        <div className="py-10 h-full">
+        <div className="py-10 h-full x  xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40  ">
             <div className="flex justify-between">
                 <Link to="/dashboard">
                     <svg
@@ -156,8 +157,10 @@ const Support = () => {
                 </Link>
                 <img src={profile} alt="profile" className="ml-auto" />
             </div>
-            <div className=" text-textpurple">
-                <p className="text-4xl font-bold my-6">Support groups</p>
+            <div className="flex text-textpurple gap-4">
+                <p className="text-4xl font-bold my-6">Support Groups</p>
+
+                <img src={shake} alt="wave" className="w-10 self-center h-10" />
             </div>
             <p className="font-bold text-md mb-4">Subscribed meetings</p>
 
@@ -209,9 +212,7 @@ const Support = () => {
                                 className="px-2 py-3 flex justify-between bg-white rounded-lg my-2"
                             >
                                 <p className="text-sm">{item.title}</p>
-                                <p className="text-sm">
-                                    {item.date} 
-                                </p>
+                                <p className="text-sm">{item.date}</p>
                             </div>
                         </Link>
                     </div>

@@ -15,7 +15,7 @@ import Activity from "./pages/Activity";
 
 function App() {
     return (
-        <div className="app bg-purple40 w-full h-full px-4 ">
+        <div className="app bg-purple40 w-full h-full px-4 xl:bg-white xl:py-20">
             <Router>
                 <OverProvider>
                     <Routes>
@@ -31,7 +31,7 @@ function App() {
                         <Route element={<Calories />} path="/calories" />
                         <Route element={<WaterLog />} path="/waterlog" />
                         <Route element={<Suppport />} path="/support" />
-                        <Route element={<Activity />} path="/activity" />
+                        <Route element={<Activity />} path="/checklist" />
                         <Route
                             element={<SupportDetails />}
                             path="/supportdetails"

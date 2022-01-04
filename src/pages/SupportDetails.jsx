@@ -1,18 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import profile from "../images/Ellipse 1.png";
+import speak from "../images/speak.png";
 import PrimaryButton from "../componets/PrimaryButton"
+import Bookedmodal from '../componets/Bookedmodal';
 
 
 const SupportDetails = () => {
     const location = useLocation()
     const item = location.state
+    const [modal, setModal] = useState(false)
+
+    const toggleModal = () => {
+        setModal(prevModal => !prevModal)
+    }
 
     
     
     
     return (
-        <div className="py-10 h-full">
+        <div className="py-10 h-full xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div className="flex justify-between">
                 <Link to="/support">
                     <svg
@@ -32,8 +39,9 @@ const SupportDetails = () => {
                 </Link>
                 <img src={profile} alt="profile" className="ml-auto" />
             </div>
-            <div className=" text-textpurple">
-                <p className="text-4xl font-bold my-6">Meeting Details</p>
+            <div className="flex gap-4 text-textpurple mb-3 ">
+                <p className="text-2xl font-semibold">Meeting Details</p>
+                <img src={speak} alt="wave" className="w-10  h-10 " />
             </div>
             {Object.values(item).map((item, index) => (
                 <div key={item.id}>
@@ -73,9 +81,10 @@ const SupportDetails = () => {
                     dignissimos delectus perspiciatis perferendis? Corrupti
                     dolore, facere id repellat autem atque veniam sint officiis.
                 </p>
-            </div>{" "}
-            <div className='mt-20'>
-                <PrimaryButton text="Book a slot" />
+            </div>
+            {modal && <Bookedmodal setModal={setModal} />}
+            <div className="mt-20">
+                <PrimaryButton text="Book a slot" onSubmit={toggleModal} />
             </div>
         </div>
     );

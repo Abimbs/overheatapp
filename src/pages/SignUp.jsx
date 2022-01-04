@@ -1,44 +1,201 @@
 import React, { useState } from "react";
-import StepOne from "../componets/StepOne";
-import Stepper from "../componets/Stepper";
-import StepTwo from "../componets/StepTwo";
 
+import { Formik } from "formik";
+import * as Yup from "yup";
+import PrimaryButton from "../componets/PrimaryButton";
+import PrimaryInput from "../componets/PrimaryInput";
+import { Link, useNavigate } from "react-router-dom";
 
-const SignUp = () => {
-    const [step, setStep] = useState(0);
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 
-    //procced to next step
-    const nextStep = () => setStep((prevStep) => prevStep + 1);
-
-    // go back to prev step
-
-    const backStep = () => setStep((prevStep) => prevStep - 1);
-
-    const stepper = () => {
-        switch (step) {
-            case 0:
-                return <StepOne nextStep={nextStep} step={step} />;
-            case 1:
-                return <StepTwo backStep={backStep} step={step} />;
-         
-
-              default: return 'Unknow step'
-        }
-    };
+const StepOne = ({ nextStep, step }) => {
+    const [value, setValue] = useState("");
+    const navigate = useNavigate();
 
     return (
-        <div className="xl:max-w-6xl mx-auto">
-            <div className="text-textpurple text-center font-bold pt-32 ">
-                <p className="text-4xl">Welcome to</p>
-                <p className="text-5xl">Me</p>
+        <div className="  xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 mx-auto bg-purple40  ">
+            <Formik
+                initialValues={{
+                    firstName: "",
+
+                    email: "",
+                    country: "",
+                    postcode: "",
+                    Age: "",
+                    gender: "",
+                    dob: "",
+                    password: "",
+                    confirmPassword: "",
+                }}
+                validationSchema={Yup.object({
+                    firstName: Yup.string().required("This field is required"),
+                    lastName: Yup.string().required("This field is required"),
+                    email: Yup.string()
+                        .email("Invalid email address")
+                        .required("This field is required"),
+                    password: Yup.string()
+                        .required("Enter your password")
+                        .matches(
+                            /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+                            "Password must contain at least 8 characters, one uppercase, one number and one special case character"
+                        ),
+                    confirmPassword: Yup.string()
+                        .required("Please confirm your password")
+                        .oneOf(
+                            [Yup.ref("password"), null],
+                            "Passwords don't match."
+                        ),
+                })}
+                onSubmit={(
+                    { email, password, confirmPassword, firstName, lastName },
+                    { setSubmitting }
+                ) => {
+                    navigate("/dashboard");
+                    console.log(email);
+                }}
+            >
+                {(formik) => (
+                    <form onSubmit={formik.handleSubmit}>
+                        <PrimaryInput
+                            id="firstName"
+                            type="text"
+                            label="FIRST NAME"
+                            placeholder="Enter your first name "
+                            formikTouched={formik.touched.firstName}
+                            formikErrors={formik.errors.firstName}
+                            getFieldProps={{
+                                ...formik.getFieldProps("firstName"),
+                            }}
+                        />
+
+                        <PrimaryInput
+                            id="email"
+                            type="email"
+                            placeholder="Email Address"
+                            formikTouched={formik.touched.email}
+                            formikErrors={formik.errors.email}
+                            getFieldProps={{
+                                ...formik.getFieldProps("email"),
+                            }}
+                        />
+                        <div className="border-2 shadow appearance-none   rounded-lg w-full py-4  px-3 text-gray-700 leading-tight bg-white">
+                            <PhoneInput
+                                placeholder="Enter phone number"
+                                value={value}
+                                onChange={setValue}
+                                defaultCountry="RU"
+                                international
+                            />
+                        </div>
+
+                        <div className="mb-5" />
+
+                        {/* <div className="border-2 shadow appearance-none  mt-5 rounded-lg w-full py-3  px-3 text-gray-700 leading-tight bg-white">
+                            <Select
+                                options={options}
+                                value={value}
+                                onChange={changeHandler}
+                            />
+                         */}
+                        <PrimaryInput
+                            id="country"
+                            type="country"
+                            label="country"
+                            placeholder="Country"
+                            formikTouched={formik.touched.country}
+                            formikErrors={formik.errors.country}
+                            getFieldProps={{
+                                ...formik.getFieldProps("country"),
+                            }}
+                        />
+
+                        <PrimaryInput
+                            id="postcode"
+                            type="postcode"
+                            label="postcode"
+                            placeholder="Postcode"
+                            formikTouched={formik.touched.postcode}
+                            formikErrors={formik.errors.postcode}
+                            getFieldProps={{
+                                ...formik.getFieldProps("postcode"),
+                            }}
+                        />
+                        <PrimaryInput
+                            id="age"
+                            type="age"
+                            label="age"
+                            placeholder="Age"
+                            formikTouched={formik.touched.age}
+                            formikErrors={formik.errors.age}
+                            getFieldProps={{
+                                ...formik.getFieldProps("age"),
+                            }}
+                        />
+                        <PrimaryInput
+                            id="gender"
+                            type="gender"
+                            label="gender"
+                            placeholder="Gender"
+                            formikTouched={formik.touched.gender}
+                            formikErrors={formik.errors.gender}
+                            getFieldProps={{
+                                ...formik.getFieldProps("gender"),
+                            }}
+                        />
+                        <PrimaryInput
+                            id="dob"
+                            type="date"
+                            label="dob"
+                            placeholder="Date of Birth"
+                            formikTouched={formik.touched.dob}
+                            formikErrors={formik.errors.dob}
+                            getFieldProps={{
+                                ...formik.getFieldProps("dob"),
+                            }}
+                        />
+                        <PrimaryInput
+                            id="password"
+                            type="password"
+                            label="PASWWORD"
+                            placeholder=". . . . . . . . . ."
+                            formikTouched={formik.touched.password}
+                            formikErrors={formik.errors.password}
+                            getFieldProps={{
+                                ...formik.getFieldProps("password"),
+                            }}
+                            eye
+                        />
+                        <PrimaryInput
+                            id="confirmPassword"
+                            type="password"
+                            label="CONFIRM PASWWORD"
+                            placeholder=". . . . . . . . . ."
+                            formikTouched={formik.touched.confirmPassword}
+                            formikErrors={formik.errors.confirmPassword}
+                            getFieldProps={{
+                                ...formik.getFieldProps("confirmPassword"),
+                            }}
+                            eye
+                        />
+                        <PrimaryButton
+                            text="Next"
+                            type="submit"
+                            onSubmit={nextStep}
+                        />
+                    </form>
+                )}
+            </Formik>
+            <div className=" mt-5 text-center">
+                <p>
+                    Do you have an account?{" "}
+                    <span className="font-bold text-textpurple">
+                        <Link to="/">Sign In</Link>
+                    </span>
+                </p>
             </div>
-            <p className="text-textpurple font-bold mt-14">
-                Create New account
-            </p>
-            <Stepper step={step} />
-            {stepper()}
         </div>
     );
 };
 
-export default SignUp;
+export default StepOne;

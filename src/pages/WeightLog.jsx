@@ -2,6 +2,7 @@ import React from 'react'
 import profile from "../images/Ellipse 1.png";
 import { Link } from 'react-router-dom';
 import weightlog from "../images/weightlog.png"
+import scale from "../images/scale.png"
 
 
 const WeightLog = () => {
@@ -33,7 +34,7 @@ const WeightLog = () => {
         },
     ];
     return (
-        <div className="py-10 h-full">
+        <div className="py-10 h-full xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div className="flex justify-between">
                 <Link to="/dashboard">
                     <svg
@@ -54,7 +55,15 @@ const WeightLog = () => {
                 <img src={profile} alt="profile" className="ml-auto" />
             </div>
             <div className=" text-textpurple">
-                <p className="text-4xl font-bold my-6">Weight Log</p>
+                <div className="flex gap-4">
+                    <p className="text-4xl font-bold my-6">Weight Log</p>
+
+                    <img
+                        src={scale}
+                        alt="wave"
+                        className="w-10 self-center h-10"
+                    />
+                </div>
                 <p className="text-xl font-semibold mb-3 underline">
                     December 4-10
                 </p>

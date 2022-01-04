@@ -57,7 +57,7 @@ const Activity = () => {
     
     console.log(dashboard)
     return (
-        <div className="py-10 h-full">
+        <div className="py-10 h-full xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40">
             <div className="flex justify-between">
                 <Link to="/dashboard">
                     <svg
