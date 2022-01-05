@@ -9,7 +9,7 @@ const SubscribedMeetings = () => {
     const item = location.state;
 
     return (
-        <div className="py-10 h-full">
+        <div className="py-10 h-full xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40  ">
             <div className="flex justify-between">
                 <Link to="/support">
                     <svg

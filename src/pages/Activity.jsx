@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useAuth } from '../componets/Context'
 import { Link } from 'react-router-dom'
 import profile from "../images/Ellipse 1.png";
+import mark from "../images/mark.png";
 import todobutton from "../images/todoButton.png";
 
 
@@ -77,8 +78,9 @@ const Activity = () => {
                 </Link>
                 <img src={profile} alt="profile" className="ml-auto" />
             </div>
-            <div className=" text-textpurple">
-                <p className="text-4xl font-bold my-6">Checklist</p>
+            <div className="flex gap-4">
+                <p className="text-2xl font-semibold">Checklist </p>
+                <img src={mark} alt="wave" className="w-7 self-center h-7" />
             </div>
             <div className="bg-white rounded-lg px-3 py-2 my-6">
                 <p className="text-xl font-semibold mb-3 underline">
@@ -90,7 +92,7 @@ const Activity = () => {
                             className={
                                 index === item.id
                                     ? "bg-purple text-white text-center shadow-lg rounded-lg px-2 py-1"
-                                    : "text-purple40 font-bold text-center"
+                                    : "text-calenderText font-bold text-center"
                             }
                             key={item.id}
                             onClick={() => setIndex(item.id)}
@@ -101,10 +103,10 @@ const Activity = () => {
                     ))}
                 </div>
             </div>
-            <div className="w-full  bg-white flex  rounded-lg my-3 px-2 ">
+            <div className="w-full  bg-white flex mb-14  rounded-lg my-3 px-2 ">
                 <form onSubmit={addTodo}>
                     <input
-                        className="w-full outline-none p-2"
+                        className="w-full outline-none px-2 py-4 "
                         placeholder="Add an activity.........."
                         onChange={valuehandler}
                     />
@@ -155,10 +157,10 @@ const Activity = () => {
                 </div>
             ))}
 
-            <div className="bg-purple h-10 w-10 rounded-full flex justify-center  items-center mx-auto mt-10">
+            <div className="bg-purple h-20 w-20 rounded-full flex justify-center  items-center mx-auto mt-10">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8"
+                    className="h-16 w-16"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="#fff"

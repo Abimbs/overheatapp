@@ -34,7 +34,7 @@ const WeightLog = () => {
         },
     ];
     return (
-        <div className="py-10 h-full xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
+        <div className="py-10 h-full xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div className="flex justify-between">
                 <Link to="/dashboard">
                     <svg
@@ -69,7 +69,7 @@ const WeightLog = () => {
                 </p>
             </div>
 
-            <div className="bg-white rounded-lg p-4">
+            <div className="bg-white xl:bg-none rounded-lg p-4 flex justify-center items-center">
                 <img src={weightlog} alt="weightlog" />
             </div>
 

@@ -19,7 +19,7 @@ const SupportDetails = () => {
     
     
     return (
-        <div className="py-10 h-full xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
+        <div className="py-10 h-full xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div className="flex justify-between">
                 <Link to="/support">
                     <svg
@@ -44,8 +44,8 @@ const SupportDetails = () => {
                 <img src={speak} alt="wave" className="w-10  h-10 " />
             </div>
             {Object.values(item).map((item, index) => (
-                <div key={item.id}>
-                    <img src={item.image} alt="item.pic" />
+                <div key={item.id} >
+                    <img src={item.image} className='w-full my-24' alt="item.pic" />
                     <div key={index}>
                         <p className="my-4 text-xl font-bold">{item.title}</p>
                         <p className="mt-3">

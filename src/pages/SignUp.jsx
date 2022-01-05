@@ -14,7 +14,7 @@ const StepOne = ({ nextStep, step }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="  xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 mx-auto bg-purple40  ">
+        <div className="  xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 mx-auto bg-purple40  ">
             <Formik
                 initialValues={{
                     firstName: "",

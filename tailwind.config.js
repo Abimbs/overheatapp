@@ -6,6 +6,7 @@ module.exports = {
                 purple: "#7e33ff",
                 purple40: "#f2ebff",
                 textpurple: "#1B0049",
+                calenderText: "#CDBDDC",
             },
         },
     },

@@ -36,7 +36,7 @@ const data = [
 
 const HeartRate = () => {
     return (
-        <div className="py-10 h-full xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
+        <div className="py-10 h-full xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div className="flex justify-between">
                 <Link to="/dashboard">
                     <svg
@@ -54,20 +54,24 @@ const HeartRate = () => {
                         />
                     </svg>
                 </Link>
-                <img src={profile} alt="profile" className="ml-auto" />
+                <img src={profile} alt="profile" className="" />
             </div>
             <div className=" text-textpurple">
                 <div className="flex gap-4">
                     <p className="text-4xl font-bold my-6">Heart Rate Log</p>
 
-                    <img src={hrt} alt="wave" className="w-10 self-center h-10" />
+                    <img
+                        src={hrt}
+                        alt="wave"
+                        className="w-10 self-center h-10"
+                    />
                 </div>
                 <p className="text-xl font-semibold mb-3 underline">
                     December 4-10
                 </p>
             </div>
 
-            <div className="bg-white rounded-lg p-4">
+            <div className=" bg-white xl:bg-none rounded-lg p-4 flex justify-center items-center">
                 <img src={hearrate} alt="heartrate" />
             </div>
 

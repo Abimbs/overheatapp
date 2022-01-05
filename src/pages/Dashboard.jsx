@@ -59,7 +59,7 @@ const Dashboard = () => {
     
     // console.log(dashboard)
     return (
-        <div className=" xl:rounded-lg h-full  mx-auto py-10 xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
+        <div className=" xl:rounded-lg h-full  mx-auto py-10 xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div>
                 <img src={profile} alt="profile" className="ml-auto" />
             </div>
@@ -139,43 +139,48 @@ const Dashboard = () => {
                     ))}
                 </div>
             </div>{" "}
-            <div className="mx-auto xl:max-w-xl  ">
-                <div className="flex">
-                    {array1.map(({ id, image, route }) => (
-                        <div key={id}>
-                            <Link to={route}>
-                                <img
-                                    className=""
-                                    src={image}
-                                    alt="dashboard"
-                                    key={id}
-                                />
-                            </Link>
-                        </div>
-                    ))}
+            <div className="mx-auto   ">
+                <div className="xl:flex justify-around">
+                    <div className="flex">
+                        {array1.map(({ id, image, route }) => (
+                            <div key={id}>
+                                <Link to={route}>
+                                    <img
+                                        className=""
+                                        src={image}
+                                        alt="dashboard"
+                                        key={id}
+                                        style={{ width: "400px" }}
+                                    />
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex">
+                        {array2.map(({ id, image, route }) => (
+                            <div key={id}>
+                                <Link to={route}>
+                                    <img
+                                        className=""
+                                        src={image}
+                                        alt="dashboard"
+                                        key={id}
+                                        style={{ width: "400px" }}
+                                    />
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="flex">
-                    {array2.map(({ id, image, route }) => (
-                        <div key={id}>
-                            <Link to={route}>
-                                <img
-                                    className=""
-                                    src={image}
-                                    alt="dashboard"
-                                    key={id}
-                                />
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-                <div className="flex">
+                <div className="flex  max-w-4xl mx-auto">
                     {array3.map(({ id, image, route }) => (
-                        <div key={id}>
+                        <div key={id} className="">
                             <Link to={route}>
                                 <img
                                     className=" "
                                     src={image}
                                     alt="dashboard"
+                                    style={{ width: "400px" }}
                                 />
                             </Link>
                         </div>

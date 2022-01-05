@@ -8,7 +8,7 @@ import {Link, useNavigate } from "react-router-dom"
 const SignIn = () => {
     const navigate = useNavigate()
     return (
-        <div className="h-screen  mx-auto xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40">
+        <div className="h-screen  mx-auto xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40">
             <div className="text-textpurple text-center font-bold pt-32">
                 <p className="text-4xl">Welcome to</p>
                 <p className="text-5xl">Me</p>
@@ -71,7 +71,7 @@ const SignIn = () => {
                     Reset password
                 </p>
                 <Link to="/dashboard">
-                    <PrimaryButton text="SignIn" />
+                    <PrimaryButton text="Sign In" />
                 </Link>{" "}
             </div>
 
