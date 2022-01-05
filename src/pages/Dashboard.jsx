@@ -101,7 +101,7 @@ const Dashboard = () => {
                     {dashboard.map((item) => (
                         <div
                             key={item.id}
-                            className=" bp-2  px-4 py-3 my-2  min-w-fit w-full rounded-full flex bg-purple40 p-2"
+                            className=" bp-2  px-4 py-3 my-2 whitespace-nowrap min-w-fit w-full rounded-full flex  bg-purple40 p-2"
                             onClick={() => todoComplete(item.id)}
                         >
                             <div className="">
