@@ -36,7 +36,7 @@ const WeightLog = () => {
     return (
         <div className="py-10 h-full xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div className="flex justify-between">
-                <Link to="/dashboard">
+                <Link to="/">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-8 w-8"

@@ -25,6 +25,8 @@ const array1 = [
 ];
 
 
+
+
 const array2 = [
     {
         id: 1,
@@ -56,8 +58,7 @@ const Dashboard = () => {
     const { dashboard,  todoComplete } = useAuth();
 
    
-    
-    // console.log(dashboard)
+ 
     return (
         <div className=" xl:rounded-lg h-full  mx-auto py-10 xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div>
@@ -96,12 +97,12 @@ const Dashboard = () => {
                         </svg>
                     </div>
                 </div>
-
+{/* checklist on the dashboard */}
                 <div className="flex gap-14 overflow-x-scroll   ">
                     {dashboard.map((item) => (
                         <div
                             key={item.id}
-                            className=" bp-2  px-4 py-3 my-2 whitespace-nowrap min-w-fit w-full rounded-full flex  bg-purple40 p-2"
+                            className="   px-4 py-3 my-2 whitespace-nowrap  w-96 flex justify-center items-center rounded-full  bg-purple40 p-2"
                             onClick={() => todoComplete(item.id)}
                         >
                             <div className="">
@@ -139,6 +140,8 @@ const Dashboard = () => {
                     ))}
                 </div>
             </div>{" "}
+
+            
             <div className="mx-auto   ">
                 <div className="xl:flex justify-around">
                     <div className="flex">

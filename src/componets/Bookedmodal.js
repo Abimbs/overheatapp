@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Bookedmodal = ({setModal}) => {
+const Bookedmodal = ({ toggleModal }) => {
     return (
         <div
-            className="bg-black top-0 left-0 right-0 px-6 bottom-0 text-center flex justify-center items-center fixed xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 "
+            className="bg-black top-0 left-0  px-6 text-center flex justify-center items-center fixed xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 "
             style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
         >
             <div className="bg-white w-96  py-4 rounded-lg shadow-lg mx-auto">
@@ -12,10 +12,15 @@ const Bookedmodal = ({setModal}) => {
                     The Confirmation email has been sent to your email
                 </p>
                 <hr />
-                <p className="font-bold text-xl cursor-pointer mt-2" onClick={()=>setModal(false)}>OK</p>
+                <p
+                    className="font-bold text-xl cursor-pointer mt-2"
+                    onClick={toggleModal}
+                >
+                    OK
+                </p>
             </div>
         </div>
     );
-}
+};
 
 export default Bookedmodal

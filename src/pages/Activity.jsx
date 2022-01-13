@@ -47,20 +47,16 @@ const Activity = () => {
             number: 27,
             text:"Sat"
         },
-        // {
-        //     id: 1,
-        //     number: 21,
-        //     text:"Today"
-        // },
+      
     ]
     const { dashboard, todoComplete, addTodo,  valuehandler } =
         useAuth();
     
     console.log(dashboard)
     return (
-        <div className="py-10 h-full xl:max-w-lg xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40">
+        <div className=" xl:rounded-lg h-full  mx-auto py-10 xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div className="flex justify-between">
-                <Link to="/dashboard">
+                <Link to="/">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-8 w-8"

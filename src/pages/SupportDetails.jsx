@@ -82,7 +82,7 @@ const SupportDetails = () => {
                     dolore, facere id repellat autem atque veniam sint officiis.
                 </p>
             </div>
-            {modal && <Bookedmodal setModal={setModal} />}
+            {modal && <Bookedmodal toggleModal={toggleModal} />}
             <div className="mt-20">
                 <PrimaryButton text="Book a slot" onSubmit={toggleModal} />
             </div>

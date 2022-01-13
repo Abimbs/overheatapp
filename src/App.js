@@ -1,6 +1,6 @@
-import SignIn from "./pages/SignIn";
+
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
-import SignUp from "./pages/SignUp";
+
 import Dashboard from "./pages/Dashboard";
 import {OverProvider} from "./componets/Context";
 import HeartRate from "./pages/HeartRate";
@@ -19,11 +19,10 @@ function App() {
             <Router>
                 <OverProvider>
                     <Routes>
-                        <Route element={<SignIn />} path="/" exact />
-                        <Route element={<SignUp />} path="/signup" exact />
+                       
                         <Route
                             element={<Dashboard />}
-                            path="/dashboard"
+                            path="/"
                             exact
                         />
                         <Route element={<HeartRate />} path="/heartrate" />
