@@ -3,6 +3,7 @@ import hearrate from '../images/heartrate.png'
 import hrt from '../images/hrt.png'
 import profile from "../images/Ellipse 1.png";
 import { Link } from 'react-router-dom';
+import MotionComponent from '../componets/MotionComponent';
 
 
 const data = [
@@ -36,7 +37,8 @@ const data = [
 
 const HeartRate = () => {
     return (
-        <div className="py-10 h-full xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
+        <MotionComponent>
+            <div className="py-10 h-full xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 bg-purple40 ">
             <div className="flex justify-between">
                 <Link to="/">
                     <svg
@@ -87,6 +89,7 @@ const HeartRate = () => {
                 ))}
             </div>
         </div>
+        </MotionComponent>
     );
 }
 
