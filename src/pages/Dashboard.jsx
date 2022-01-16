@@ -77,6 +77,8 @@ const Dashboard = () => {
                     </div>
                     <p className="font-bold mt-2 text-6xl">ANNE</p>
                 </div>
+
+                
                 <div className="bg-white rounded-lg shadow-lg py-5 px-4 mb-6">
                     <div className="flex gap-3 mb-4">
                         <Link to="/checklist">

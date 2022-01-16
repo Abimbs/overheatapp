@@ -30,10 +30,14 @@ export const useAuth = () => {
      const todoComplete = (todoID) => {
          const newTodo = dashboard.map((item) => {
              if (item.id === todoID) {
-                 return { ...item, completed: true };
-             } else {
+                 return { ...item, completed:true ? item.completed === false: item.completed ===true };
+                 
+             }
+             else {
                  return item;
              }
+
+           
          });
          setDashboard(newTodo);
      };
